@@ -38,17 +38,26 @@ except:
 def render_html(title: str, content: str, user=None) -> str:
     """Simple HTML template"""
     nav = f"""
-    <nav style="background: #2563eb; color: white; padding: 1rem;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <h1 style="margin: 0;"><a href="/" style="color: white; text-decoration: none;">SkillConnect</a></h1><h3>for yatris of 2025</h3>
-            <div>
-                <a href="/" style="color: white; margin: 0 1rem; text-decoration: none;">Home</a>
-                {"<a href='/profile' style='color: white; margin: 0 1rem; text-decoration: none;'>Profile</a>" if user else ""}
-                {"<a href='/logout' style='color: white; margin: 0 1rem; text-decoration: none;'>Logout</a>" if user else "<a href='/login' style='color: white; margin: 0 1rem; text-decoration: none;'>Login</a>"}
-                {"" if user else "<a href='/register' style='color: white; margin: 0 1rem; text-decoration: none;'>Register</a>"}
-            </div>
-        </div>
-    </nav>
+   <nav style="background: #2563eb; color: white; padding: 1rem;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    
+    <!-- Logo section -->
+    <div style="display: flex; flex-direction: column; line-height: 1.2; margin-bottom: 0.5rem;">
+      <a href="/" style="color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold;">SkillConnect</a>
+      <span style="font-size: 1.2rem; font-weight: normal;">for yatris of 2025</span>
+    </div>
+
+    <!-- Nav links -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+      <a href="/" style="color: white; text-decoration: none;">Home</a>
+      {"<a href='/profile' style='color: white; text-decoration: none;'>Profile</a>" if user else ""}
+      {"<a href='/logout' style='color: white; text-decoration: none;'>Logout</a>" if user else "<a href='/login' style='color: white; text-decoration: none;'>Login</a>"}
+      {"" if user else "<a href='/register' style='color: white; text-decoration: none;'>Register</a>"}
+    </div>
+
+  </div>
+</nav>
+
     """
     
     return f"""
