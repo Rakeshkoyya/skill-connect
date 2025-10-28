@@ -40,7 +40,7 @@ def render_html(title: str, content: str, user=None) -> str:
     nav = f"""
     <nav style="background: #2563eb; color: white; padding: 1rem;">
         <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <h1 style="margin: 0;"><a href="/" style="color: white; text-decoration: none;">SkillConnect</a></h1>
+            <h1 style="margin: 0;"><a href="/" style="color: white; text-decoration: none;">SkillConnect</a></h1><h3>for yatris of 2025</h3>
             <div>
                 <a href="/" style="color: white; margin: 0 1rem; text-decoration: none;">Home</a>
                 {"<a href='/profile' style='color: white; margin: 0 1rem; text-decoration: none;'>Profile</a>" if user else ""}
@@ -180,7 +180,7 @@ async def register_page():
                 <input type="text" name="username" required>
             </div>
             <div class="form-group">
-                <label>Phone Number (optional)</label>
+                <label>Phone Number *</label>
                 <input type="text" name="phone">
             </div>
             <div class="form-group">
@@ -193,7 +193,7 @@ async def register_page():
             </div>
             <div class="form-group">
                 <label>Your Skills (comma-separated)</label>
-                <input type="text" name="skills" placeholder="Python, JavaScript, Design, Marketing">
+                <input type="text" name="skills" placeholder="Programmer, Designer, Marketing">
             </div>
             <div class="form-group">
                 <label>Bio</label>
